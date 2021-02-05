@@ -6,9 +6,8 @@ brickField.addEventListener("change", (event) => {
 })
 
 const sizeField = document.getElementById("size");
-sizeField.addEventListener("change", (event) => {
+sizeField.addEventListener("input", (event) => {
     let size = Number(event.target.value);
-    console.log("SIZE: " + size);
     let brick = getBrick();
     drawPyramid(brick, size);
 })
@@ -37,7 +36,6 @@ function drawPyramid(brick = "#", size = 5) {
     let pyramid = document.createElement("div");
     pyramid.innerHTML = result;
     container.appendChild(pyramid);
-    console.log("Size: " + size + " Brick: " + brick);
 
 }
 
