@@ -1,0 +1,28 @@
+#pyramid {
+    font-family: "Courier New", monospace;
+    margin-top: 30px;
+    text-align: center;
+    width: 1000px;
+    margin: auto;
+}
+
+.brick {
+    margin: 10px;
+    width: 500px;
+    display: inline-block;
+}
+
+.size {
+    margin: 20px;
+    width: 500px;
+    display: inline-block;
+}
+
+.header {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+    color: azure;
+    background-color: cornflowerblue;
+}
