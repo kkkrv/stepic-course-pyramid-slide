@@ -1,42 +1,35 @@
 const brickField = document.getElementById("brick");
+const sizeField = document.getElementById("size");
+
 brickField.addEventListener("change", (event) => {
-    let size = getSize();
+    let size = getValue(sizeField);
     let brick = event.target.value;
     drawPyramid(brick, size);
 })
 
-const sizeField = document.getElementById("size");
 sizeField.addEventListener("input", (event) => {
     let size = Number(event.target.value);
-    let brick = getBrick();
+    let brick = getValue(brickField);
     drawPyramid(brick, size);
 })
 
-function getBrick() {
-    const brickField = document.getElementById("brick");
-    return brickField.value;
+function getValue(element) {
+    return element.value;
 }
 
-function getSize() {
-    const sizeField = document.getElementById("size");
-    return Number(sizeField.value);
-}
-
-function drawPyramid(brick = "#", size = 5) {
-
+function drawPyramid(brick = "#", size = 11) {
     const container = document.getElementById('pyramid');
     container.innerHTML = '';
     let result = ``;
-    for (let i = 2; i <= size ; i++) {
+    for (let i = 2; i <= size + 1; i++) {
         let row = brick;
         row = row.repeat(i);
-        row = row.padStart(size, `\xa0`);
+        row = row.padStart(size + 1, `\xa0`);
         result = result + row + "<br>";
     }
     let pyramid = document.createElement("div");
     pyramid.innerHTML = result;
     container.appendChild(pyramid);
-
 }
 
-drawPyramid("#", 3)
+drawPyramid();
