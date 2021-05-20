@@ -2,14 +2,14 @@ const brickField = document.getElementById("brick");
 const sizeField = document.getElementById("size");
 
 brickField.addEventListener("change", (event) => {
-    let size = getValue(sizeField);
+    let size = Number(sizeField.value);
     let brick = event.target.value;
     drawPyramid(brick, size);
 })
 
 sizeField.addEventListener("input", (event) => {
     let size = Number(event.target.value);
-    let brick = getValue(brickField);
+    let brick = brickField.value;
     drawPyramid(brick, size);
 })
 
