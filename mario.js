@@ -13,10 +13,6 @@ sizeField.addEventListener("input", (event) => {
     drawPyramid(brick, size);
 })
 
-function getValue(element) {
-    return element.value;
-}
-
 function drawPyramid(brick = "#", size = 11) {
     const container = document.getElementById('pyramid');
     container.innerHTML = '';
